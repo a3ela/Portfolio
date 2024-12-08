@@ -1,19 +1,16 @@
 import React from "react";
-import Social from "./Social";
 import Data from "./Data";
-import ScrollDown from "./ScrollDown";
 import "./hero.css";
+import SplineScene from "../SplineScene/SplineScene";
 
 const Hero = () => {
   return (
-    <section className="hero section" id="hero">
-      <div className="hero__container container grid">
-        <div className="hero__content grid">
-          <Social />
-          <div className="hero__img"></div>
-          <Data />
-        </div>
-        <ScrollDown />
+    <section className="hero__section section" id="home">
+      <div className="hero__container">
+        <SplineScene />
+      </div>
+      <div className="hero__content">
+        <Data />
       </div>
     </section>
   );

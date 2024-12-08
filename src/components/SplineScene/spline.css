@@ -1,0 +1,60 @@
+.spline {
+  position: relative;
+}
+
+.hero__social {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__social-icon {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.hero__social-icon:hover {
+  color: var(--title-color-dark);
+}
+
+.logo-cover {
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  height: 1.8rem;
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.8rem;
+  animation: hop 2.5s infinite;
+}
+
+.logo-cover p {
+  font-size: large;
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hero__social {
+    top: 20%;
+    left: 0;
+    margin-left: 2rem;
+  }
+}
