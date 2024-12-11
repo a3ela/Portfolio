@@ -3,9 +3,11 @@ import Data from "./Data";
 import "./hero.css";
 import SplineScene from "../SplineScene/SplineScene";
 
+import "../../index.css";
+
 const Hero = () => {
   return (
-    <section className="hero__section section" id="home">
+    <section className="hero__section " id="home">
       <div className="hero__container">
         <SplineScene />
       </div>
