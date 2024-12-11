@@ -14,15 +14,16 @@
 .hero__social-icon {
   font-size: 1.7rem;
   margin-bottom: 1rem;
-  color: var(--title-color);
+  color: var(--secondary-clr1);
+  transition: color 0.2s ease-in;
 }
 
 .hero__social-icon:hover {
-  color: var(--title-color-dark);
+  color: var(--primary-clr);
 }
 
 .logo-cover {
-  background-color: #fff;
+  background-color: var(--primary-clr);
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -36,6 +37,7 @@
 }
 
 .logo-cover p {
+  color: var(--secondary-clr3);
   font-size: large;
 }
 
