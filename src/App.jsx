@@ -1,9 +1,8 @@
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
-import Skill from "./components/Skill/Skill";
 import Work from "./components/Work/Work";
-import Qualification from "./components/Quallification/Qualification";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
         <Hero />
         <Work />
         <About />
-        <Skill />
-        <Qualification />
+        <Skills />
       </main>
       <div style={{ color: "white" }}>footer</div>
     </div>
