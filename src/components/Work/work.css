@@ -11,48 +11,111 @@
   padding-bottom: calc(4 * 1.5rem);
   margin-bottom: 4vw;
 }
-
-#card1 {
-  --index: 1;
+.section__header {
+  justify-content: space-between;
+  align-items: center;
+}
+.ready-work {
+  color: var(--secondary-clr2);
+  position: relative;
+  margin-bottom: 2rem;
+  font-weight: var(--font-normal);
 }
 
-#card2 {
-  --index: 2;
+.ready-work::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--secondary-clr3);
+  position: absolute;
+  left: -10%;
+  bottom: 20%;
+  border-radius: 50%;
+  animation: blink 2s infinite;
 }
 
-#card3 {
-  --index: 3;
-}
-
-#card4 {
-  --index: 4;
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 .card {
   position: sticky;
   top: var(--header-height);
-  padding: calc(var(--index) * 1.5rem);
-}
-
-#card1 .card__body {
-  background-color: yellow;
-}
-
-#card2 .card__body {
-  background-color: gray;
-}
-
-#card3 .card__body {
-  background-color: green;
-}
-
-#card4 .card__body {
-  background-color: red;
+  padding-top: 1.5rem;
 }
 
 .card__body {
   padding: 30px;
-  border-radius: 50px;
+  border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   height: fit-content;
+}
+
+.card__top {
+  justify-content: space-between;
+  font-size: var(--h3-font-size);
+}
+
+.card__head {
+  margin-top: var(--mb-1);
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--h1-font-size);
+}
+
+.card__head svg {
+  color: var(--secondary-clr2);
+  font-size: var(--font-size-big);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card__head svg:hover {
+  transform: rotate(-50deg);
+}
+
+.card__description-title,
+.card__technologies-title {
+  font-size: var(--h2-font-sizes);
+}
+
+.card__stat {
+  margin-top: var(--mb-1);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
+  margin-top: var(--mb-1);
+}
+
+@media screen and (max-width: 710px) {
+  .card__head svg {
+    font-size: var(--h1-font-size);
+  }
+
+  .card__head {
+    font-size: var(--h2-font-size);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card__head {
+    font-size: var(--h3-font-size);
+  }
+  .card__stat {
+    grid-template-columns: 1fr;
+  }
 }
