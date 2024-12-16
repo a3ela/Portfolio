@@ -1,5 +1,5 @@
 .about {
-  padding-top: 10rem;
+  padding-top: 20rem;
 }
 .about__container {
   grid-template-columns: repeat(2, 1fr);

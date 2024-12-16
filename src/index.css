@@ -57,11 +57,13 @@ textarea,
 select {
   font-family: var(--ff-primary);
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: var(--body-color);
   color: var(--secondary-clr1);
@@ -108,7 +110,14 @@ img {
   display: block;
   font-size: var(--small-font-size);
   color: var(--secondary-clr2);
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+}
+
+.section__line {
+  height: 5px;
+  transform: skew(-50deg);
+  background: var(--secondary-clr3);
+  border: none;
 }
 
 .section__title,

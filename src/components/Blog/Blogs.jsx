@@ -19,6 +19,7 @@ function extractImageUrl(html) {
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     blogService.getBlogs().then((blogs) => {
       setBlogs(blogs.items.slice(0));
@@ -30,6 +31,7 @@ const Blogs = () => {
       <div className="section__head container">
         <h1 className="section__title">Blog</h1>
         <h2 className="section__subtitle">some of my posts</h2>
+        <hr className="section__line" />
       </div>
       <div className="blogs__container container grid">
         {blogs.map((blog) => {

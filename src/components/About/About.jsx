@@ -12,6 +12,7 @@ const About = () => {
       <div className="section__header container">
         <h2 className="section__title">About Me</h2>
         <span className="section__subtitle">Something About Me</span>
+        <hr className="section__line" />
       </div>
 
       <div className="about__container container grid">
