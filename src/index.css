@@ -3,9 +3,9 @@
   --ff-secondary: serif;
 
   --header-height: 3rem;
-  --primary-clr: #00d9ff; /* Cyan */
+  --primary-clr: #0088ff; /* Cyan */
   --secondary-clr1: #ffffff; /* White */
-  --secondary-clr2: #d3d3d3; /* Light Gray */
+  --secondary-clr2: #cec6c6; /* Light Gray */
   --secondary-clr3: #006b8b; /* Dark Cyan */
   --body-color: #000; /* Dark background */
   --container-color: #0b0e0e; /* Black */
@@ -72,14 +72,14 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--title-color);
+  color: var(--secondary-clr1);
   font-weight: var(--font-bold);
 }
 
 ul,
 li {
   list-style: none;
-  color: var(--title-color);
+  color: var(--secondary-clr1);
 }
 
 a {
@@ -99,9 +99,10 @@ img {
 }
 
 .section {
-  padding-top: 3rem;
+  padding-top: 1rem;
   background-color: var(--body-color);
 }
+
 .section__title {
   font-size: var(--h1-font-size);
 }
@@ -111,6 +112,12 @@ img {
   font-size: var(--small-font-size);
   color: var(--secondary-clr2);
   margin-bottom: 1rem;
+}
+
+.section__header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .section__line {
