@@ -11,10 +11,11 @@ import { IoMdClose } from "react-icons/io";
 import logo from "../../assets/logo.png";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+
   return (
     <header className="header">
       <nav className="nav container">
-        <a href="#" className="nav__logo">
+        <a href="#">
           <img src={logo} alt="logo" />
         </a>
         <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
