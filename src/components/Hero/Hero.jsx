@@ -7,11 +7,11 @@ import "../../index.css";
 
 const Hero = () => {
   return (
-    <section className="hero__section " id="home">
-      <div className="hero__container">
+    <section className="hero section " id="home">
+      <div className="hero__container ">
         <SplineScene />
       </div>
-      <div className="hero__content">
+      <div className="hero__content container">
         <Data />
       </div>
     </section>

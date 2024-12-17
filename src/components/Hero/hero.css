@@ -1,10 +1,6 @@
-.hero__section {
-  overflow: hidden; /* Change to visible or remove it if not necessary */
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
+.hero {
+  height: 100vh;
 }
-
 .hero__container {
   position: relative;
 }
@@ -57,7 +53,7 @@
   margin-bottom: var(--mb-3);
 }
 
-@media screen and (max-width: 1118px) {
+@media screen and (max-width: 769px) {
   .hero__content {
     top: 10%;
   }
@@ -67,14 +63,9 @@
   }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 426px) {
   .hero__content {
+    margin-top: 1rem;
     position: initial;
-    width: fit-content;
-    margin-inline: auto;
-    margin-bottom: 3rem;
-  }
-  .hero__description {
-    width: fit-content;
   }
 }
