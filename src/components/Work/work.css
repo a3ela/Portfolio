@@ -1,15 +1,12 @@
 .work__content {
   list-style: none;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 87vh);
+  grid-template-rows: repeat(5, 87vh);
   gap: 4vw;
   padding-bottom: calc(4 * 1.5rem);
   margin-bottom: 4vw;
 }
-.section__header {
-  justify-content: space-between;
-  align-items: center;
-}
+
 .ready-work {
   color: var(--secondary-clr2);
   position: relative;
@@ -19,8 +16,8 @@
 
 .ready-work::before {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background: lightgreen;
   position: absolute;
   left: -10%;
@@ -44,7 +41,6 @@
 .card {
   position: sticky;
   top: var(--header-height);
-  padding-top: 1.5rem;
 }
 
 .card__body {
@@ -91,16 +87,17 @@
 .card__img {
   width: 100%;
   border-radius: 20px;
-  height: 100%;
   object-fit: cover;
   margin-top: var(--mb-1);
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 768px) {
   .card__head svg {
     font-size: var(--h1-font-size);
   }
-
+  .work__section {
+    margin-bottom: 5rem;
+  }
   .card__head {
     font-size: var(--h2-font-size);
   }

@@ -5,7 +5,7 @@ import Card from "./Card";
 
 const Work = () => {
   return (
-    <div className="work__section">
+    <div className="work__section section">
       <div className="work__container container">
         <div className="section__header flex">
           <div>
