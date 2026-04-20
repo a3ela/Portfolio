@@ -1,0 +1,153 @@
+.contact {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #050505;
+  color: #fff;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 18px;
+  }
+
+  &__top-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+
+    span {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.55);
+      white-space: nowrap;
+    }
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &__title {
+    margin: 6.25rem 0;
+    font-size: 4rem;
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+    font-weight: 400;
+    color: #fff;
+    max-width: 1000px;
+    margin-right: auto;
+    display: inline-block;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  &__cta-wrap {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    padding: 48px 100px 60px 0;
+  }
+
+  &__cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-width: 408px;
+    height: 56px;
+    padding: 0 28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition:
+      border-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #050505;
+      transform: translateY(-1px);
+
+      &::before {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  &__cta-arrow {
+    font-size: 20px;
+    line-height: 1;
+    transform: translateY(-1px);
+    transition: transform 0.25s ease;
+
+    .contact__cta:hover & {
+      transform: rotate(45deg);
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    &__container {
+      padding: 24px;
+    }
+
+    &__title {
+      font-size: clamp(2.4rem, 10vw, 4.6rem);
+    }
+
+    &__cta {
+      min-width: min(100%, 360px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &__top-label {
+      gap: 8px;
+    }
+
+    &__title {
+      line-height: 1.02;
+    }
+
+    &__cta-wrap {
+      padding-top: 40px;
+    }
+  }
+}

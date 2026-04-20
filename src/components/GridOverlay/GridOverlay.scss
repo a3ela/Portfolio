@@ -1,0 +1,56 @@
+.grid-overlay {
+  position: absolute;
+  padding: 0 40px;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+
+  /* fade top/bottom edges */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.grid-overlay__line {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.247);
+}
+
+.has-crosshair {
+  z-index: 1;
+}
+
+.grid-overlay__crosshair-h-line {
+  position: absolute;
+  top: 75%;
+  left: -20px;
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.grid-overlay__crosshair-circle {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}

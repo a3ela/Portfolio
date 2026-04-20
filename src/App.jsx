@@ -1,5 +1,6 @@
-import { About, Footer, Contact, Header, Work } from "./comtainer/index";
-import { Navbar } from "./components/index";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ContactPage from "./pages/Contact/ContactPage";
 
 // style
 import "./App.scss";
@@ -7,12 +8,10 @@ import "./App.scss";
 const App = () => {
   return (
     <div className="app">
-      <Navbar />
-      <Header />
-      <About />
-      <Work />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
     </div>
   );
 };

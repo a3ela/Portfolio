@@ -1,0 +1,364 @@
+.app__contact {
+  position: relative;
+  background: #050505;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  padding: 120px 0;
+}
+
+/* 1. Grid Overlay (Identical to your header logic) */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+
+  .grid-line {
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* 2. Content Layout built on an 8-column CSS Grid to perfectly match the 9 background lines */
+.contact-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    8,
+    1fr
+  ); // 8 equal columns map flawlessly to 9 grid lines
+  row-gap: 6rem;
+}
+
+/* --- Header Area --- */
+.contact-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  .title {
+    grid-column: 2 / 8; // Starts right on the 2nd grid line
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 0 0 4rem 0;
+  }
+
+  .subtitle {
+    grid-column: 3 / 8; // Indented perfectly to start on the 3rd grid line
+    font-size: clamp(1.5rem, 3vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+}
+
+.contact-body {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: start;
+}
+
+/* Form Area */
+.form-area {
+  grid-column: 2 / 5; // Spans exactly from line 2 to line 5
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: none;
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: background-color 0.2s ease;
+
+    &::placeholder {
+      color: #666;
+    }
+
+    &:focus {
+      background-color: #222;
+    }
+  }
+
+  .form-textarea {
+    min-height: 200px;
+    resize: none;
+  }
+
+  .submit-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+}
+
+.socials-area {
+  grid-column: 7 / 9;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0.5rem;
+
+  .social-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    transition:
+      color 0.35s ease,
+      border-color 0.35s ease;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #fff;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+      z-index: 0;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+      font-size: 1.25rem;
+    }
+
+    &:hover {
+      color: #000;
+      border-color: #fff;
+
+      &::before {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  .social-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 120px;
+    .platform {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #e0e0e0;
+    }
+
+    .handle {
+      font-size: 0.8rem;
+      color: #666;
+      font-family: "Courier New", Courier, monospace;
+    }
+  }
+
+  /* The Crosshairs are absolutely positioned exactly 50% across 
+    the `.socials-area` container to intersect perfectly with the background grid line!
+  */
+  .social-crosshair {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+
+    .crosshair-h-line {
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      width: 41px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .crosshair-circle {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.direct-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: rem; // Add extra space to separate from socials at top
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    transition:
+      color 0.35s ease,
+      border-color 0.35s ease;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #fff;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s ease;
+      z-index: 0;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+      font-size: 1.25rem;
+    }
+
+    &:hover {
+      color: #000;
+      border-color: #fff;
+
+      &::before {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 120px;
+
+    .platform {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #e0e0e0;
+    }
+
+    .handle {
+      font-size: 0.8rem;
+      color: #666;
+      font-family: inherit;
+    }
+  }
+}
+
+/* 3. Responsive Design */
+@media screen and (max-width: 1024px) {
+  .contact-header .subtitle {
+    grid-column: 2 / 8; // Remove indentation on tablet
+  }
+  .form-area {
+    grid-column: 2 / 6;
+  }
+  .socials-area {
+    grid-column: 6 / 9;
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    row-gap: 4rem;
+  }
+  .contact-header,
+  .contact-body {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+  .contact-header .title,
+  .contact-header .subtitle,
+  .form-area,
+  .socials-area {
+    grid-column: 1 / -1;
+  }
+  .socials-area {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+  .social-crosshair {
+    display: none; // Hiding crosshair clutter on mobile (matching your header logic)
+  }
+}
