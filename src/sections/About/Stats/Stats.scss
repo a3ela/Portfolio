@@ -1,0 +1,60 @@
+.stats {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background-color: #000; // Matches your hero
+  
+  &__container {
+    // THE GOLDEN RULE: 120px padding
+    padding: 60px 120px; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; // Spacing between columns
+
+    @media (max-width: 1024px) {
+      padding: 40px 60px; // Responsive adjustment
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding: 40px 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5); // Sub subtle grey
+    font-family: "JetBrains Mono", monospace; // Better dev aesthetic
+    text-transform: lowercase;
+  }
+
+  &__line {
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1); // Fine, thin line
+  }
+
+  &__value {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+
+    @media (max-width: 1200px) {
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaTelegram, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="footer-bar__socials" aria-label="Social links">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/abelsintayehu/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
@@ -16,7 +16,7 @@ const Footer = () => {
             <FaLinkedinIn />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/a3ela"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
@@ -24,12 +24,12 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://t.me/itsmeabe1a"
             target="_blank"
             rel="noreferrer"
-            aria-label="Instagram"
+            aria-label="Telegram"
           >
-            <FaInstagram />
+            <FaTelegram />
           </a>
         </div>
 

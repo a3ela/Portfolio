@@ -1,0 +1,36 @@
+.contact-page {
+  position: relative;
+  background: #000;
+  min-height: 100vh;
+}
+
+.contact-body {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15rem;
+  padding: 4rem 0;
+
+  &__form {
+    width: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__social {
+    width: 89%;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact-body {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+
+    &__form {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}

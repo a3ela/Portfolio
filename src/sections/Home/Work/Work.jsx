@@ -2,10 +2,11 @@ import { useEffect, useRef } from "react";
 import { ScrollObserver, valueAtPercentage } from "aatjs";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./Work.scss";
 
 import { projects } from "../../../constants/data";
-import { Link } from "react-router-dom";
+import GridOverlay from "../../../components/GridOverlay/GridOverlay";
 
 const Work = () => {
   const cardsRef = useRef(null);
@@ -15,7 +16,6 @@ const Work = () => {
     if (!cardsContainer) return;
 
     const cards = cardsContainer.querySelectorAll(".work-card");
-
     cardsContainer.style.setProperty("--cards-count", cards.length);
     cardsContainer.style.setProperty(
       "--card-height",
@@ -36,110 +36,94 @@ const Work = () => {
         offsetTop,
         offsetBottom: window.innerHeight - 300,
       }).onScroll(({ percentageY }) => {
-        cardInner.style.scale = valueAtPercentage({
-          from: 1,
-          to: toScale,
-          percentage: percentageY,
-        });
-
-        cardInner.style.filter = `brightness(${valueAtPercentage({
-          from: 1,
-          to: 0.6,
-          percentage: percentageY,
-        })})`;
+        cardInner.style.setProperty(
+          "--scale",
+          valueAtPercentage({ from: 1, to: toScale, percentage: percentageY }),
+        );
+        cardInner.style.setProperty(
+          "--brightness",
+          valueAtPercentage({ from: 1, to: 0.6, percentage: percentageY }),
+        );
       });
     });
   }, []);
 
   return (
-    <>
-      <section id="work" className="work">
-        <div className="grid-overlay">
-          {[...Array(9)].map((_, i) => (
+    <section id="work" className="work">
+      <GridOverlay />
+
+      <div className="work__space work__space--small" />
+
+      <div className="work__cards" ref={cardsRef}>
+        {projects.map((work, index) => {
+          const cardContent = (
             <div
-              key={i}
-              className={`grid-line ${i === 7 ? "has-crosshair" : ""}`}
+              className="work-card__inner"
+              style={{ backgroundColor: work.bgColor, color: work.textColor }}
             >
-              {i === 7 && (
-                <>
-                  <div className="crosshair-h-line" />
-                  <div className="crosshair-circle" />
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-        <div className="work__space work__space--small" />
-        <div className="work__cards" ref={cardsRef}>
-          {projects.map((work, index) => {
-            const cardContent = (
-              <div
-                className="work-card__inner"
-                style={{ backgroundColor: work.bgColor, color: work.textColor }}
-              >
-                <div className="work-card__header">
-                  <div
-                    className="work-card__meta"
-                    style={{ borderBottomColor: `${work.textColor}33` }}
-                  >
-                    <span className="year">{work.year}</span>
-                    <span className="type">{work.category}</span>
-                  </div>
-                  <div className="work-card__title-row">
-                    <h2 className="title">{work.title}</h2>
-                    <span className="arrow">
-                      <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                  </div>
+              <div className="work-card__header">
+                <div
+                  className="work-card__meta"
+                  style={{ borderBottomColor: `${work.textColor}33` }}
+                >
+                  <span className="year">{work.year}</span>
+                  <span className="type">{work.category}</span>
                 </div>
-                <div className="work-card__image-container">
-                  <img
-                    className="work-card__image"
-                    src={work.image}
-                    alt={work.title}
-                  />
+                <div className="work-card__title-row">
+                  <h2 className="title">{work.title}</h2>
+                  <span className="arrow">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
                 </div>
               </div>
-            );
+              <div className="work-card__image-container">
+                <img
+                  className="work-card__image"
+                  src={work.image}
+                  alt={work.title}
+                />
+              </div>
+            </div>
+          );
 
-            return (
-              <Link
-                to={`/project/${work.id}`}
-                className="work-card"
-                key={index}
-                id={`work-card-${index}`}
-              >
-                {index === 0 ? (
-                  <motion.div
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                  >
-                    {cardContent}
-                  </motion.div>
-                ) : (
-                  cardContent
-                )}
-              </Link>
-            );
-          })}
-        </div>
-        <div className="work__space" />
-      </section>
-    </>
+          return (
+            <Link
+              to={`/project/${work.id}`}
+              className="work-card"
+              key={index}
+              id={`work-card-${index}`}
+            >
+              {index === 0 ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  {cardContent}
+                </motion.div>
+              ) : (
+                cardContent
+              )}
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="work__space" />
+    </section>
   );
 };
 

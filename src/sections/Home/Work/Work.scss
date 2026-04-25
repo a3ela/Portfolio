@@ -5,10 +5,9 @@
   padding: 0;
 
   &__cards {
-    width: 100%;
-    padding: 0 120px;
-    box-sizing: border-box;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: grid;
     grid-template-rows: repeat(var(--cards-count), var(--card-height));
     gap: 10px 0;
@@ -25,23 +24,29 @@
   position: sticky;
   top: calc(var(--navbar-height, 80px) + 20px);
   text-decoration: none;
+
   &__inner {
-    will-change: transform;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     flex-flow: column;
-    place-content: flex-start;
     align-items: flex-start;
     gap: 8px;
     height: 700px;
     padding: 24px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 25px 50px -12px rgba(20, 20, 40, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
     transform-origin: center top;
     cursor: pointer;
     box-sizing: border-box;
+
+    /* Smooth scaling/brightness via CSS variables */
+    transform: scale(var(--scale, 1));
+    filter: brightness(var(--brightness, 1));
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
   }
 
   &__header {
@@ -75,11 +80,14 @@
     letter-spacing: -0.04em;
   }
 
-  .arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
+  .arrow svg {
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+  }
+
+  &:hover .arrow svg {
+    transform: rotate(-45deg);
   }
 
   &__image-container {
@@ -94,40 +102,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  &:hover .arrow {
-    transform: rotate(-45deg);
+    transition: transform 0.4s ease;
   }
 }
-.work-card {
-  &#work-card-0 {
-    --card-bg: var(--base-1);
-  }
 
-  &#work-card-1 {
-    --card-bg: var(--base-2);
-  }
-
-  &#work-card-2 {
-    --card-bg: var(--base-3);
-  }
-
-  &#work-card-3 {
-    --card-bg: var(--base-4);
-  }
-
-  &__inner {
-    background-color: var(--card-bg, #fff);
-  }
-}
 @media (max-width: 600px) {
-  .work-card {
-    &__inner {
-      padding: 16px;
-    }
+  .work-card__inner {
+    padding: 16px;
+    height: auto;
+  }
 
-    .title {
-      font-size: 2rem;
-    }
+  .title {
+    font-size: 2rem;
   }
 }

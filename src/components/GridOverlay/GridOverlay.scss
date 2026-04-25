@@ -5,9 +5,7 @@
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 10;
 
-  /* fade top/bottom edges */
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -28,7 +26,7 @@
   position: relative;
   width: 1px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.247);
+  background: rgba(255, 255, 255, 0.174);
 }
 
 .has-crosshair {
