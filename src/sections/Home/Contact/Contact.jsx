@@ -24,8 +24,8 @@ const Contact = () => {
           </div>
 
           <h2 className="contact__title">
-            I&apos;m open for freelance projects, feel free to email me to see
-            how we can collaborate
+            I’m open to freelance and full‑time opportunities. Reach out and
+            let’s build together.
           </h2>
         </motion.div>
 
@@ -41,7 +41,7 @@ const Contact = () => {
             className="contact__cta"
             aria-label="Go to contact page"
           >
-            <span>contact me</span>
+            <span>Let’s talk</span>
             <span className="contact__cta-arrow">
               <FiArrowUpRight />
             </span>

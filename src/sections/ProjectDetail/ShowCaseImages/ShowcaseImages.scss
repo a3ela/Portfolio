@@ -1,0 +1,28 @@
+.showcase-images {
+  padding: 50px 0 100px;
+  background-color: #050505;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  &__item {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+  }
+}

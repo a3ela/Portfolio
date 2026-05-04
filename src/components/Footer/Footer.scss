@@ -1,15 +1,23 @@
 .footer-bar {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 100px 0;
+  padding: 100px 30px;
 }
 
 .footer-bar__inner {
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+    gap: 24px;
+    text-align: center;
+  }
 }
 
 .footer-bar__socials {
@@ -22,10 +30,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.25s ease;
+    transition: all 0.25s ease;
 
     &:hover {
       color: #ececec;
+      transform: translateY(-2px);
     }
 
     svg {
@@ -38,18 +47,20 @@
 .footer-bar__copy {
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  font-family: var(--font-mono);
 }
 
 @media screen and (max-width: 900px) {
   .footer-bar {
-    padding: 16px 1rem;
+    padding: 60px 1.5rem;
   }
 
   .footer-bar__socials {
-    gap: 16px;
+    gap: 20px;
   }
 
   .footer-bar__copy {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }

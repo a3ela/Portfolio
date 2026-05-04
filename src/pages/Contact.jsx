@@ -9,7 +9,7 @@ const Contact = () => {
       <Navbar />
       <SectionHero
         title="say hello"
-        description="let's collaborate. feel free to drop me a line about your project or follow me on social networks"
+        description="let's collaborate. feel free to drop me a line about your project or connect me on social networks"
       />
       <div className="contact-body">
         <GridOverlay />

@@ -5,6 +5,7 @@
   top: 0;
   z-index: 100;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   @media screen and (max-width: 900px) {
@@ -18,15 +19,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .app__navbar-logo a {
   text-decoration: none;
-  color: #fff;
+  color: #888;
   font-weight: 500;
   font-size: 1.25rem;
   letter-spacing: -0.4px;
+  transition: color 0.3s ease;
+
+  &.active {
+    color: #fff;
+    opacity: 1;
+  }
 }
 
 .app__navbar-links {
@@ -41,9 +47,10 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 
-    &:hover {
+    &:hover,
+    &.active {
       color: #fff;
     }
   }
@@ -56,11 +63,37 @@
       color: #33ff85;
       text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
     }
+
+    &.active::after {
+      display: none; // Exclude resume from active underline
+    }
   }
 
   @media screen and (max-width: 900px) {
     display: none;
   }
+}
+
+// Progress Bar Styles
+.app__navbar-progress-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12); // The "grey" background
+  z-index: 101;
+}
+
+.app__navbar-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #fff; // The white filling
+  transform-origin: 0%;
+  z-index: 102;
 }
 
 .app__navbar-menu {
@@ -70,7 +103,7 @@
   svg {
     width: 28px;
     height: 28px;
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
   }
 
@@ -115,7 +148,8 @@
         font-size: 1.25rem;
         transition: color 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: #fff;
         }
       }

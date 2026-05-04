@@ -1,0 +1,58 @@
+.problem-solution {
+  position: relative;
+  padding: 8rem 0;
+  background: #050505;
+  color: #fff;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    font-family: "Courier New", monospace;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}

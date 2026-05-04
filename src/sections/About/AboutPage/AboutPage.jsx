@@ -1,35 +1,39 @@
+import React from "react";
 import "./AboutPage.scss";
 import { image } from "../../../constants";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
 import GridOverlay from "../../../components/GridOverlay/GridOverlay";
 
 const AboutPage = () => {
   return (
-    <section className="about" id="about">
+    <section className="about-page" id="about">
       <GridOverlay />
 
-      <div className="about__container">
-        <div className="about__image-col">
-          <div className="about__image-wrapper">
-            <img src={image.profile} alt="Profile" />
+      <div className="about-page__container">
+        {/* Left Column: Image */}
+        <div className="about-page__image-col">
+          <div className="about-page__image-wrapper">
+            <img
+              src={image.profile}
+              alt="Profile"
+              className="about-page__img"
+            />
           </div>
         </div>
 
-        <div className="about__text-col">
-          <div className="about__header">
-            <div className="about__label">
-              <span>.hello</span>
-              <div className="about__line" />
-            </div>
+        {/* Right Column: Text */}
+        <div className="about-page__text-col">
+          <div className="about-page__header">
+            <span className="about-page__label">.hello</span>
+            <div className="about-page__header-line" />
           </div>
 
-          <div className="about__content">
-            <p className="about__desc">
-              my craft is building experiences that bring value to people and
-              celebrate function over form. let's hide the ego and give some
-              freedom to creativity and make the first small step changing the
-              world to a better place
+          <div className="about-page__content">
+            <p className="about-page__desc">
+              I’m a full-stack software engineer based in Addis Ababa,
+              specializing in building scalable web applications with React,
+              Node.js, and Python. I focus on creating reliable APIs, clean user
+              interfaces, and systems that perform well in real-world
+              environments.
             </p>
           </div>
         </div>

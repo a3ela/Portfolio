@@ -4,6 +4,7 @@ import { image } from "../../../constants";
 import { motion } from "framer-motion";
 import GridOverlay from "../../../components/GridOverlay/GridOverlay";
 import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -24,10 +25,11 @@ const About = () => {
           </div>
 
           <p className="about__desc">
-            my craft is building experiences that bring value to people and
-            celebrate function over form. let's hide the ego and give some
-            freedom to creativity and make the first small step changing the
-            world to a better place
+            I’m a full-stack software engineer based in Addis Ababa,
+            specializing in building scalable web applications with React,
+            Node.js, and Python. I focus on creating reliable APIs, clean user
+            interfaces, and systems that perform well in real-world
+            environments.
           </p>
 
           <motion.div
@@ -37,12 +39,12 @@ const About = () => {
             viewport={{ once: false, amount: 0.35 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
-            <a className="about__cta" href="#about" aria-label="About me">
+            <Link to="/about" className="about__cta" aria-label="About me">
               <span>About me</span>
               <span className="about__cta-arrow">
                 <FiArrowUpRight />
               </span>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 

@@ -1,0 +1,136 @@
+.related-projects {
+  position: relative;
+  padding: 6rem 0;
+  color: #fff;
+
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-family: "DM Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.4em;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.208);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Gap between rows */
+  }
+}
+
+.related-project-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  height: min-content;
+
+  &:hover {
+    .related-project-item__arrow {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__image-wrapper {
+    width: 302px;
+    height: 84px;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin-right: 2rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 0.25rem;
+  }
+
+  &__category {
+    font-family: "DM Mono", monospace;
+    font-size: 14px;
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.4em;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 1.75em;
+    text-align: start;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 1.5rem;
+    transform-origin: center;
+    transition: transform 0.35s ease;
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+/* Optional responsive adjustments */
+@media (max-width: 768px) {
+  .related-project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+
+    &__image-wrapper {
+      width: 100%;
+      height: 150px;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    &__arrow {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+    }
+  }
+}

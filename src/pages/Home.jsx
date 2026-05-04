@@ -3,14 +3,14 @@ import { Navbar, Footer } from "../components/index";
 
 const Home = () => {
   return (
-    <div className="home">
+    <main className="home">
       <Navbar />
       <Hero />
       <Work />
       <About />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 };
 

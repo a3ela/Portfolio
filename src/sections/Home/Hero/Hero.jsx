@@ -1,30 +1,28 @@
 import "./Hero.scss";
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import GridOverlay from "../../../components/GridOverlay/GridOverlay";
 
+// Reusable animation config (no visual change)
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: -20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, delay, ease: "easeOut" },
+});
+
 const Hero = () => {
   return (
-    <div id="home" className="app__header">
+    <section id="home" className="app__header">
       <GridOverlay />
 
       <div className="top-bar">
-        <motion.span
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="top-text"
-        >
+        <motion.span {...fadeUp(0.2)} className="top-text">
           Hey, I'm Abel
         </motion.span>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="top-text available-projects"
-        >
-          <span className="blinking-dot"></span>
-          available for new projects
+
+        <motion.div {...fadeUp(0.2)} className="top-text available-projects">
+          <span className="blinking-dot" aria-hidden="true" />
+          <span className="availability-text">available for new projects</span>
         </motion.div>
       </div>
 
@@ -32,17 +30,18 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="hero-text"
         >
           <span style={{ color: "var(--bg-surface)" }}>
-            a web development <br />
-            partner with focus on <br />
+            Full‑Stack Engineer
+            <br />
+            building scalable <br />
           </span>
-          interactive experiences
+          APIs & interactive UIs
         </motion.h1>
       </div>
-    </div>
+    </section>
   );
 };
 

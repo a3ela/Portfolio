@@ -65,11 +65,9 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.15);
-      
       .skills__icon-wrapper {
         filter: grayscale(0);
+        background-color: #333;
       }
     }
   }
@@ -80,11 +78,10 @@
     justify-content: center;
     background: #111;
     border-radius: 4px;
-    width: 50px; // Fixed size for consistency
-    height: 50px;
+    width: 25%; 
     padding: 10px;
     transition: all 0.3s ease;
-    filter: grayscale(1); // Grayscale by default, color on hover
+    filter: grayscale(1); 
   }
 
   &__icon {

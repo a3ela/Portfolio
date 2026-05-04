@@ -1,3 +1,5 @@
+import images from "./images";
+
 export const projects = [
   {
     id: "bizz-buzz",
@@ -12,10 +14,9 @@ export const projects = [
       "From its inception, Bizz Buzz aimed to revolutionize the way entrepreneurs network and collaborate. Inspired by the struggles faced by entrepreneurs in their personal journeys, the platform's founders embarked on a mission to create a solution that would empower entrepreneurs worldwide. They envisioned a space where like-minded individuals could come together, share experiences, exchange knowledge, and forge partnerships that transcend traditional boundaries.\n\nBizz Buzz's journey began with a small team of dedicated individuals who believed in the power of entrepreneurship and the impact it could have on the world. They meticulously analyzed the pain points faced by entrepreneurs, conducting in-depth market research and engaging with the community to understand their needs. Armed with this knowledge, they set out to build a social network that would bridge the gap between entrepreneurs and provide them with a supportive ecosystem.",
     year: "2023",
     timeframe: "16 days",
-    tools: "Framer",
+    tools: "React, Node.js, Docker",
     category: "Personal Project",
-    image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?auto=format&fit=crop&w=1200&q=100",
+    image: images.project1,
     bgColor: "#ff6200ff",
     textColor: "#000",
     seeAlso: ["aquaflow", "snackify", "zengo", "roverride"],
@@ -32,8 +33,7 @@ export const projects = [
     timeframe: "30 days",
     tools: "Figma",
     category: "Branding and Identity",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=100",
+    image: images.project4,
     bgColor: "#ffffff",
     textColor: "#1f00ff",
     seeAlso: ["bizz-buzz", "snackify", "zengo", "roverride"],
@@ -50,10 +50,9 @@ export const projects = [
     timeframe: "21 days",
     tools: "React Native",
     category: "UI/UX",
-    image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=100",
-    bgColor: "#2a3134",
-    textColor: "#b3ffcbff",
+    image: images.project3,
+    bgColor: "#96d3b2",
+    textColor: "#000",
     seeAlso: ["bizz-buzz", "aquaflow", "zengo", "roverride"],
   },
   {
@@ -67,8 +66,7 @@ export const projects = [
     timeframe: "14 days",
     tools: "Next.js",
     category: "Personal Project",
-    image:
-      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=100",
+    image: images.project2,
     bgColor: "#ffe300",
     textColor: "#3d3b54ff",
     seeAlso: ["bizz-buzz", "aquaflow", "snackify", "roverride"],
@@ -85,10 +83,9 @@ export const projects = [
     timeframe: "45 days",
     tools: "Figma, Framer",
     category: "Branding and Identity",
-    image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=100",
-    bgColor: "#242424",
-    textColor: "#fff",
+    image: images.project5,
+    bgColor: "#3d8bffff",
+    textColor: "#ffffffff",
     seeAlso: ["bizz-buzz", "aquaflow", "snackify", "zengo"],
   },
 ];

@@ -1,0 +1,163 @@
+.project-cards {
+  position: relative;
+  padding: 100px 0;
+  background-color: #000;
+  color: #fff;
+
+  @media screen and (max-width: 992px) {
+    padding: 50px 0;
+  }
+  &__container {
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 0 24px;
+    }
+  }
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 4.2fr 1fr;
+  gap: 80px;
+  margin-bottom: 200px;
+  align-items: start;
+
+  &:last-child {
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 40px;
+    grid-template-columns: 1.8fr 1fr;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+  }
+
+  &__card-wrapper {
+    width: 100%;
+  }
+
+  &__desc-wrapper {
+    position: relative;
+    height: 100%;
+
+    @media (max-width: 992px) {
+      display: block;
+      margin-top: 24px;
+    }
+  }
+
+  &__desc-sticky {
+    position: sticky;
+    top: 150px;
+    padding-top: 20px;
+
+    @media (max-width: 992px) {
+      position: static;
+      padding-top: 0;
+    }
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 300px;
+    text-transform: lowercase;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+      font-size: 1rem;
+    }
+  }
+}
+
+.project-card {
+  padding: 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+
+  &__arrow {
+    width: 3rem;
+    height: 3rem;
+    transition: rotate 0.5s ease;
+  }
+  &:hover {
+    .project-card__arrow {
+      rotate: -45deg;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+
+    @media (max-width: 1400px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__arrow {
+    width: 64px;
+
+    @media (max-width: 500px) {
+      width: 32px;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    aspect-ratio: 2.5 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 10px;
+  }
+}

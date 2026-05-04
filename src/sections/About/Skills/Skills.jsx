@@ -1,6 +1,6 @@
 import React from "react";
 import "./Skills.scss";
-import GridOverlay from "../../components/GridOverlay/GridOverlay";
+import GridOverlay from "../../../components/GridOverlay/GridOverlay";
 
 const skills = [
   {

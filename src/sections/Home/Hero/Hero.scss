@@ -1,6 +1,7 @@
 #home {
   position: relative;
   height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .app__header {
@@ -11,8 +12,8 @@
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .top-bar {
@@ -26,6 +27,7 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
 
   .available-projects {
     display: flex;
@@ -52,12 +54,17 @@
   border-radius: 50%;
   margin-right: 8px;
   animation: blink 1.5s infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .header-content {
   position: relative;
   z-index: 10;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-text {
@@ -73,6 +80,8 @@
   box-shadow:
     0 0 40px rgba(0, 0, 0, 0.4),
     0 0 80px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 1200px) {
@@ -98,5 +107,25 @@
   .top-bar {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: flex-start;
+  }
+  #home {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .app__header {
+    padding-top: 140px;
+  }
+  .hero-text {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+  .top-bar {
+    font-size: 0.8rem;
+  }
+  #home {
+    height: 70vh;
   }
 }

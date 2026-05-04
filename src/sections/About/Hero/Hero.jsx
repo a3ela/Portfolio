@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <SectionHero
       title="About Me"
-      description="i'm a designer, maker, nomad, and coffee lover obsessed with the world of digital"
+      description="i’m a full‑stack engineer, maker, and coffee lover obsessed with interactive web experiences"
     />
   );
 };
